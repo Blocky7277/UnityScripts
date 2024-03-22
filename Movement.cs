@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float jumpForce = 1.7f;
+    public float jumpForce = 2f;
+
+    public float mvtSpeed = .5f;
 
     public bool isGrounded = false;
     public Rigidbody2D rb;
@@ -36,14 +38,14 @@ public class Movement : MonoBehaviour
             // if(!isGrounded && rb.velocity.x > 0) {
             //     rb.velocity = new(0, rb.velocity.y);
             // }
-            rb.velocity += new Vector2(-.5f, 0) * Time.deltaTime * 100;
+            rb.velocity += new Vector2(-mvtSpeed, 0) * Time.deltaTime * 100;
         }
         
         if(Input.GetKey("d") && rb.velocity.x < 5) {
             // if(!isGrounded && rb.velocity.x <  0) {
             //     rb.velocity = new(0, rb.velocity.y);
             // }
-            rb.velocity += new Vector2(.5f, 0) * Time.deltaTime * 100;;
+            rb.velocity += new Vector2(mvtSpeed, 0) * Time.deltaTime * 100;;
         }
     }
 
